@@ -1,0 +1,122 @@
+.nav{
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(10deg,black ,grey);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.ifAdding{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+}
+.sect{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.sect1{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  z-index: 100;
+
+}
+.sect2{
+  display: flex;
+  flex-direction:row;
+
+  margin-top: 5%;
+
+  width: 500px;
+}
+.table{
+   margin-top: 5%;
+   border-radius: 5px;
+   box-shadow:8px 8px 8px 8px black;
+ }
+ thead,td{
+   border:1px solid rgb(123, 193, 246);
+
+
+ }
+ thead{
+   background-color:rgb(50, 73, 187);
+   color: white;
+   text-align: center;
+   font-size: 18px;
+   font-weight: 600;
+
+ }
+ .td{
+    background-color: white;
+    font-size: 12px;
+    text-align: center;
+    backface-visibility: hidden;
+ }
+ table{
+
+
+   width: 500px;
+   border-radius: 25px 25px 0px 0px;
+ }
+ table td{
+   padding: 5px;
+ }
+table tr td{
+  font-size: 12px;
+}
+.pop2{
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30vh;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  height: 150px;
+
+}
+ .out2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    height:100%;
+    position: fixed;
+    top:0px;
+    left:0px;
+
+    background:rgba(0,0,0,0.1);
+
+    z-index: 1000;
+}
+.name{
+  padding: 5px;
+  margin-right: 1%;
+}
+.author{
+  padding: 5px;
+  margin-right: 2%;
+}
+
+@media screen and (max-width: 550px){
+    table{
+        width: 250px;
+    }
+    .sect2{
+      width: 250px;
+    }
+    .ifAdding{
+      display: flex;
+      flex-direction: column;
+    }
+    .add1{
+      width: 80px;
+      margin-top: 1%;
+    }
+}

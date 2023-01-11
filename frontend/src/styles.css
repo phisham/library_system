@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* background-color: rgb(196, 194, 191); */
+  background-image: url('https://wallpapertag.com/wallpaper/full/4/3/c/841569-new-library-background-images-1920x1202-for-full-hd.jpg');
+  background-size: cover;
+}

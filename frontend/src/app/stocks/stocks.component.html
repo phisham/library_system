@@ -1,0 +1,117 @@
+<div class="main">
+  <div class="nav">
+    <h2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;color: rgb(230, 69, 69);font-weight: bolder;margin-left: 5%;">Library Administrative System</h2>
+    <div style="display: flex;flex-direction: row;justify-content: center;width: 500px;">
+      <button routerLink="../home" mat-raised-button style="color: rgb(23, 22, 20);background-color: lightsteelblue;font-style: italic;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin-right: 25px;" >Home</button>
+      <button routerLink="../sales" mat-raised-button style="color: rgb(214, 6, 6);background-color: lightsteelblue;font-style: italic;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" >Sales</button>
+
+
+    </div>
+
+
+  </div>
+  <div class="sect">
+    <div class="sect1">
+      <h2 style="font-size: larger;margin-top: 5%;font-style: oblique;font-family: Georgia, 'Times New Roman', Times, serif;font-weight: bolder;color: brown;">  Update your stocks here.. </h2>
+      <section class="table">
+              <table border="1" >
+                <thead >
+                  <td style="border-radius: 25px 0px 0px 0px;padding: 10px;">Book Name</td>
+                  <td>Author</td>
+                  <td style="border-radius: 0px 25px 0px 0px;padding: 10px;">Update Stock</td>
+
+                  <!-- <td>Action</td> -->
+                </thead>
+                <tr *ngFor="let i of data;let index=index">
+                  <td class="td">{{i.bookName}}</td>
+                  <td class="td">{{i.author}}</td>
+                  <td class="td"><button mat-button style="background-color: rgb(38, 25, 91);color:wheat;" (click)="move(i)">MOVE TO <span style="color: rgb(82, 237, 77);"> Old </span>/ <span style="color: red;">New</span>  stock</button></td>
+
+                </tr>
+                <tr style="text-align:center ;background-color: antiquewhite;" *ngIf="data.length==0">
+                  <td colspan="5">No results found</td>
+
+                </tr>
+              </table>
+      </section>
+
+    </div>
+  </div>
+  <div class="sect" style="margin-top: 5%;">
+    <div class="sect1">
+      <h2 style="font-size: larger;margin-top: 5%;font-style: oblique;font-family: Georgia, 'Times New Roman', Times, serif;font-weight: bolder;color: rgb(112, 111, 111);">  OLD STOCKS</h2>
+      <section class="table">
+              <table border="1" >
+                <thead >
+                  <td style="border-radius: 25px 0px 0px 0px;padding: 10px;">Book Name</td>
+                  <td>Token Generated</td>
+                  <td style="border-radius: 0px 25px 0px 0px;padding: 10px;">Stock</td>
+
+                  <!-- <td>Action</td> -->
+                </thead>
+                <tr *ngFor="let i of oldStock;let index=index">
+                  <td class="td">{{i.bookName}}</td>
+                  <td class="td">{{i.token}}</td>
+                  <td class="td">{{i.stockNumber}}</td>
+
+                </tr>
+                <tr style="text-align:center ;background-color: antiquewhite;" *ngIf="oldStock.length==0">
+                  <td colspan="5">No results found</td>
+
+                </tr>
+              </table>
+      </section>
+
+    </div>
+    <div class="sect1">
+      <h2 style="font-size: larger;margin-top: 5%;font-style: oblique;font-family: Georgia, 'Times New Roman', Times, serif;font-weight: bolder;color: rgb(11, 10, 10);"> NEW STOCKS </h2>
+      <section class="table">
+              <table border="1" >
+                <thead >
+                  <td style="border-radius: 25px 0px 0px 0px;padding: 10px;">Book Name</td>
+                  <td>Token Generated</td>
+                  <td style="border-radius: 0px 25px 0px 0px;padding: 10px;">Stock</td>
+
+                  <!-- <td>Action</td> -->
+                </thead>
+                <tr *ngFor="let i of newStock;let index=index">
+                  <td class="td">{{i.bookName}}</td>
+                  <td class="td">{{i.token}}</td>
+                  <td class="td">{{i.stockNumber}}</td>
+
+                </tr>
+                <tr style="text-align:center ;background-color: antiquewhite;" *ngIf="newStock.length==0">
+                  <td colspan="5">No results found</td>
+
+                </tr>
+              </table>
+      </section>
+
+    </div>
+  </div>
+</div>
+<div *ngIf="show2" class="out2">
+              <div class="pop2 text-center mat-elevation-z4">
+                  <br>
+                  <div class="d-flex flex-column">
+
+                    <div style="display: flex;flex-direction: row;justify-content: flex-end;">
+                      <button mat-button (click)="gen_close()"><mat-icon>close</mat-icon></button>
+                    </div>
+                    <div>
+
+                      <mat-select style="border: 1px solid black;padding: 5px;width: 150px;border-radius: 5px;" placeholder="Select Stock Type" >
+                        <mat-option value="old" (click)="setType('old')">Old</mat-option>
+                        <mat-option value="new" (click)="setType('new')">New</mat-option>
+                      </mat-select>
+                      <input style="border: 1px solid black;padding: 5px;width: 150px;border-radius: 5px;margin-top: 5px;" (change)="setStockNumber($event)" type="Number" placeholder="Enter Stock Number">
+                    </div>
+
+                  <div>
+                    <button  mat-button style="background-color: blue;color: white;margin-top: 1%;" (click)="close()">Update</button>
+                  </div>
+
+                  </div>
+              </div>
+
+</div>
